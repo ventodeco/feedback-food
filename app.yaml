@@ -1,4 +1,15 @@
+runtime: php
+env: flex
+
+runtime_config:
+  document_root: public
+
 env_variables:
+  APP_LOG: errorlog
+  APP_KEY: base64:rEu16ZN3DXa8RwXt5TikMsYYKXjXffozb3csV2BdEK8=
   FILESYSTEM_DRIVER: gcs
   GOOGLE_CLOUD_PROJECT_ID: capstone-315021
+  APP_STORAGE: /tmp
+  VIEW_COMPILED_PATH: /tmp
+  SESSION_DRIVER: cookie
   GOOGLE_CLOUD_STORAGE_BUCKET: food-facts-capstone-315021
