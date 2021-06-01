@@ -1,0 +1,4 @@
+env_variables:
+  FILESYSTEM_DRIVER: gcs
+  GOOGLE_CLOUD_PROJECT_ID: capstone-315021
+  GOOGLE_CLOUD_STORAGE_BUCKET: food-facts-capstone-315021
