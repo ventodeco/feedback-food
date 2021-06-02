@@ -15,9 +15,7 @@ class FoodImageController extends Controller
     }
 
     public function store(FeedbackFoodStoreRequest $request)
-    {
-        // $path = $request->file('avatar')->store('avatars');
-        
+    {   
         $validated = $request->validated();
 
         if (!$validated) {
@@ -32,7 +30,9 @@ class FoodImageController extends Controller
             ]);
         }
 
-        $validated['path'] = 'vento';
+        $path = $request->file('image_food')->store('image_foods');
+
+        $validated['path'] = $path;
 
         $feedback = $this->feedbackRepository->store($validated);
 
