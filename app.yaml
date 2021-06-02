@@ -13,3 +13,15 @@ env_variables:
   VIEW_COMPILED_PATH: /tmp
   SESSION_DRIVER: cookie
   GOOGLE_CLOUD_STORAGE_BUCKET: food-facts-capstone-315021
+  DB_DATABASE: feedback
+  DB_USERNAME: root
+  DB_PASSWORD: root
+  ## for MYSQL, use DB_SOCKET:
+  DB_SOCKET: "/cloudsql/capstone-315021:us-central1:feedback"
+
+beta_settings:
+  cloud_sql_instances: "capstone-315021:us-central1:feedback"
+
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 2
