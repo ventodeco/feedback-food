@@ -25,7 +25,7 @@ class FeedbackFoodStoreRequest extends FormRequest
     {
         return [
             'name_food' => 'required',
-            'image_food' => 'required|image|mimes:jpeg,png,jpg,gif,svg'
+            'image_food' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ];
     }
 

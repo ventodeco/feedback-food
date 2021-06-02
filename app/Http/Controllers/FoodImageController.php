@@ -31,6 +31,7 @@ class FoodImageController extends Controller
             ]);
         }
         $file = $request->file('image_food');
+
         $path = Storage::disk('gcs')->put('/', $file);
 
         $validated['path'] = sprintf('images/%s', $path);
