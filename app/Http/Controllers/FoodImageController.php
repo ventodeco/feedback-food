@@ -6,6 +6,7 @@ use App\Helpers\ApiResponse;
 use App\Http\Requests\FeedbackFoodStoreRequest;
 use App\Repositories\FeedbackRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class FoodImageController extends Controller
 {
@@ -29,10 +30,10 @@ class FoodImageController extends Controller
                 ]
             ]);
         }
+        $file = $request->file('image_food');
+        $path = Storage::disk('gcs')->put('/', $file);
 
-        $path = $request->file('image_food')->store('image_foods');
-
-        $validated['path'] = $path;
+        $validated['path'] = sprintf('images/%s', $path);
 
         $feedback = $this->feedbackRepository->store($validated);
 
